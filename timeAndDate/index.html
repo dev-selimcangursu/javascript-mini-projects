@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Selimcan Gürsu | Full Stack Web Developer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Saat ve Tarih - Canlı olarak güncellenen bir dijital saat göster.
+    </title>
+  </head>
+  <body>
+    <style>
+      .main-wrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .time-duraciton {
+        font-size: 200px;
+      }
+    </style>
+    <div class="main-wrapper">
+      <div class="time-duraciton">
+        <span id="hoursShow"></span>:<span id="minuteShow"></span>:<span
+          id="secondShow"
+        ></span>
+      </div>
+    </div>
+  </body>
+  <script>
+    setInterval(function () {
+      let today = new Date();
+      let hours = today.getHours();
+      let minute = today.getMinutes();
+      let seconds = today.getSeconds();
+      let hoursArea = document.getElementById("hoursShow");
+      let minuteArea = document.getElementById("minuteShow");
+      let secondArea = document.getElementById("secondShow");
+
+      hoursArea.textContent = hours;
+      minuteArea.textContent = minute;
+      secondArea.textContent = seconds;
+    }, 1000);
+  </script>
+</html>
