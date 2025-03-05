@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+  </head>
+  <style>
+    .counter-wrapper {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .counter-wrapper p {
+      font-size: 45px;
+    }
+  </style>
+  <body>
+    <div class="counter-wrapper">
+      <p class="resultShow"></p>
+      <div class="button-group">
+        <button id="increase">Arttır</button>
+        <button id="reduce">Azalt</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Değerler
+    let number = 0;
+    let increase = document.getElementById("increase");
+    let resultShow = document.querySelector(".resultShow");
+    let reduce = document.getElementById("reduce");
+
+    // Ekrana Number Değerini Çıktı Alma
+    resultShow.textContent = number;
+
+    // Sayıyı Arttırma Fonksiyonu
+    increase.addEventListener("click", function (e) {
+      e.preventDefault();
+      number = number + 1;
+      resultShow.textContent = number;
+    });
+
+    // Sayıyı Azaltma Fonksiyonu
+    reduce.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (number == 0) {
+        resultShow.textContent = 0;
+      } else {
+        number = number - 1;
+        resultShow.textContent = number;
+      }
+    });
+  </script>
+</html>
